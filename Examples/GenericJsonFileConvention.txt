@@ -1,0 +1,36 @@
+[
+  Test #1
+  {
+  "test_name" : Place the name of the test,
+  "algorithm_file_path": the path to the file where the algorithm function is located (supports .py files),
+  "algorithm_function_name": the actual name of the function,
+  "parameter_modules":[
+    ["path_to_first_module_file.py","name_of_first_module"],
+    ["path_to_second_module_file.py","name_of_second_module"]
+  ],
+  "module_input_args":[the parameters that needs to be passed to the parameter modules],
+  "result_csv_path": "desired absolute path to csv output file"
+  },
+  Test #2
+  {
+  "test_name" : Place the name of the test,
+  "algorithm_file_path": the path to the file where the algorithm function is located (supports .py files),
+  "algorithm_function_name": the actual name of the function,
+  "parameter_modules":[
+    ["path_to_first_module_file.py","name_of_first_module"],
+    ["path_to_second_module_file.py","name_of_second_module"]
+  ],
+  "module_input_args":[the parameters that needs to be passed to the parameter modules],
+  "result_csv_path": "desired absolute path to csv output file.csv"
+  }
+]
+
+
+----
+To clarify, if we take the given example:
+
+algorithm_file_path -> the file where “Pythagorean_theorem” function is located
+algorithm_function_name -> the actual function name (Pythagorean_theorem)
+parameter_modules -> list the [file_location,function_name] of the "p2" functions which will be evaluated individually.
+module_input_args -> the parameters p2 function receives.
+result_csv_path -> absolute path for CSV file

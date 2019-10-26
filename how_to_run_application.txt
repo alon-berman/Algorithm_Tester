@@ -1,0 +1,13 @@
+on Windows:
+$ cd ./venv/Scripts
+$ activate.bat
+$ cd ../../
+$ python test_algorithm --path PATH_TO_JSON_FILE 
+
+Example json file can be located under Examples directory.
+
+
+on Unix
+$ cd PATH_TO_PROJECT_DIR
+$ source venv/bin/activate
+$ python test_algorithm --path PATH_TO_JSON_FILE 

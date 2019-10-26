@@ -1,0 +1,37 @@
+[
+  {
+  "test_name" : "Pythagorean Theorem",
+  "algorithm_file_path": "C:\\Git\\algorithm_tester\\Examples\\example_algorithm.py",
+  "algorithm_function_name": "run_pythagorean_algo",
+  "parameter_modules":[
+    ["C:\\Git\\algorithm_tester\\Examples\\example_algorithm.py","p2"],
+    ["C:\\Git\\algorithm_tester\\Examples\\another_file_with_modules.py","p2"]
+  ],
+  "module_input_args":[6,3],
+  "result_csv_path": "results.csv"
+  },
+
+  {
+  "test_name" : "Get Circle Radius",
+  "algorithm_file_path": "C:\\Git\\algorithm_tester\\Examples\\example_algorithm.py",
+  "algorithm_function_name": "get_circle_radius_from_surface",
+  "parameter_modules":[
+    ["C:\\Git\\algorithm_tester\\Examples\\example_algorithm.py","get_circle_radius_from_surface"],
+    ["C:\\Git\\algorithm_tester\\Examples\\another_file_with_modules.py","get_radius_from_perimeter"]
+  ],
+  "module_input_args":[50],
+  "result_csv_path": "results_circle.csv"
+  },
+
+  {
+  "test_name" : "Test No Input Args",
+  "algorithm_file_path": "C:\\Git\\algorithm_tester\\Examples\\example_algorithm.py",
+  "algorithm_function_name": "get_circle_radius_from_surface",
+  "parameter_modules":[
+    ["C:\\Git\\algorithm_tester\\Examples\\example_algorithm.py","no_input_args_func"]
+  ],
+  "module_input_args":[],
+  "result_csv_path": "results_no_input.csv"
+  }
+]
+
