@@ -1,13 +1,18 @@
 on Windows:
+$python -m venv venv
 $ cd ./venv/Scripts
 $ activate.bat
 $ cd ../../
+$ pip install -r requirements.txt
 $ python test_algorithm --path PATH_TO_JSON_FILE 
 
 Example json file can be located under Examples directory.
 
 
 on Unix
+$ sudo apt-get virtualenv
+$ virtualenv venv
 $ cd PATH_TO_PROJECT_DIR
 $ source venv/bin/activate
+$ pip install -r requirements.txt
 $ python test_algorithm --path PATH_TO_JSON_FILE 
