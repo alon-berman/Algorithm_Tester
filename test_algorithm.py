@@ -1,5 +1,6 @@
 import argparse
-from test_object.test_class import *
+from test_object.TestObjects import TestObject
+from Utils.util_functions import parse_json
 
 
 def parse_outer_args():

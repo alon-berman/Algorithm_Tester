@@ -1,6 +1,8 @@
+import importlib.util
+import logging
 import os
 import sys
-import logging
+from test_object.TestExceptions import TestException
 
 
 def load_parameter_modules(modules_list):
@@ -12,8 +14,11 @@ def load_parameter_modules(modules_list):
     """
     imported_modules = []
     for module in modules_list:
-        logging.info('importing function {} from {}'.format(module[1], module[0]))
-        imported_modules.append(load_single_module(module[0], module[1]))
+        try:
+            logging.info('importing function {} from {}'.format(module[1], module[0]))
+            imported_modules.append(load_single_module(module[0], module[1]))
+        except Exception as e:
+            raise TestException('Failed to import function!. details: {}'.format(e), 3)
     return imported_modules
 
 
@@ -24,14 +29,16 @@ def load_single_module(path, func_name):
     :param func_name: the function name
     :return: the function to be evaluated
     """
-    import importlib.util
-    dir = os.path.dirname(path)
-    sys.path.append(os.path.abspath(dir))
-    spec = importlib.util.spec_from_file_location(func_name, path)
-    module = importlib.util.module_from_spec(spec)
-    sys.modules[spec.name] = module
-    spec.loader.exec_module(module)
-    return getattr(module, func_name)
+    try:
+        curr_dir = os.path.dirname(path)
+        sys.path.append(os.path.abspath(curr_dir))
+        spec = importlib.util.spec_from_file_location(func_name, path)
+        module = importlib.util.module_from_spec(spec)
+        sys.modules[spec.name] = module
+        spec.loader.exec_module(module)
+        return getattr(module, func_name)
+    except Exception as e:
+        raise TestException('Failed to import function!. details: {}'.format(e), 3)
 
 
 def parse_json(path):
@@ -41,8 +48,10 @@ def parse_json(path):
     :return: parsed json object
     """
     import json
-
-    # read file
-    with open(path, 'r') as file:
-        test_data = file.read()
-    return json.loads(test_data)
+    try:
+        with open(path, 'r') as file:
+            test_data = file.read()
+        return json.loads(test_data)
+    except Exception as e:
+        raise TestException('Failed to load JSON file!. details: {}\n System will now terminate ....'
+                            .format(e), 3, terminate=True)
