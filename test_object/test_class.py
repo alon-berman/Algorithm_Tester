@@ -1,5 +1,5 @@
 import os.path
-from Utils.utils_functions import *
+from Utils.util_functions import *
 import logging
 
 
